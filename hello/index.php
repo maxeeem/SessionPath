@@ -12,10 +12,10 @@ $name    = isset($_SESSION['name'])    ? $_SESSION['name']    : 'Stranger';
 <title>"Hello World!" example</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript">
-function sPath(key,id) {
+function sPath(key,value) {
     var url = '../ajax/sPath.php?key='+key;
     if (typeof id !== 'undefined') {
-        url .= '&value='+id;
+        url .= '&value='+value;
     }
     $.ajax({
         type: 'GET',
@@ -53,6 +53,10 @@ window.onpopstate = function(event) {
         history.back();
     }
 };
+
+$('#sPath').click(function() {
+    sPath('name', $('#name').val());
+});
 </script>
 </head>
 <body>
@@ -63,6 +67,13 @@ window.onpopstate = function(event) {
 <?php } ?>
 
 <h1>Hello <?=$name?>!</h1>
+
+<input type="text" id="name">
+<input type="button" id="sPath">
+<br>
+<a href="sPath('name', 'John Doe');">John Doe</a>
+&emps;
+<a href="sPath('example');">Default example</a>
 
 </center>
 </body>
