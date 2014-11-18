@@ -71,9 +71,9 @@ $('#sPath').click(function() {
 <input type="text" id="name">
 <button type="button" id="sPath">Go</button>
 <br>
-<a href="sPath('name', 'John Doe');">John Doe</a>
+<a href='' onclick="sPath('name', 'John Doe');">John Doe</a>
 &emsp;
-<a href="sPath('example');">Default example</a>
+<a href='' onclick="sPath('example');">Default example</a>
 
 </center>
 </body>
