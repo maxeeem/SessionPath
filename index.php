@@ -4,6 +4,7 @@
 *
 * @author Maxim Vitoshka-Tarasov
 */
+session_start();
 
 /*
 * (re)set defaults
