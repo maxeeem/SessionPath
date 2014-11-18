@@ -21,7 +21,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         * simple route
         */
         if (isset($_GET['key']) && isset($_GET['value'])) {
-            $_SESSION[$_GET['key']] = $_GET['value'];
+            $_SESSION[$_GET['key']]    = $_GET['value'];
             $destination[$_GET['key']] = $_GET['value'];
         } 
         /*
