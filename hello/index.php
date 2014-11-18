@@ -15,7 +15,7 @@ $name    = isset($_SESSION['name'])    ? $_SESSION['name']    : 'Stranger';
 function sPath(key,value) {
     var url = '../ajax/sPath.php?key='+key;
     if (typeof id !== 'undefined') {
-        url .= '&value='+value;
+        url += '&value='+value;
     }
     $.ajax({
         type: 'GET',
