@@ -4,12 +4,12 @@
 *
 * @author Maxim Vitoshka-Tarasov
 */
+session_start();
 
 /*
 * (re)set defaults
 */
-$_SESSION['default'] = true;
-$_SESSION['name']    = 'World';
+$_SESSION['default'] = false;
 ?>
 <html>
 <head>

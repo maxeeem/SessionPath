@@ -30,15 +30,16 @@ switch ($_SERVER['REQUEST_METHOD']) {
         elseif (isset($_GET['key']) && !isset($_GET['value'])) {
             switch ($_GET['key']) {
                 case 'example':
-                    $_SESSION['default']    = true;
-                    $_SESSION[$_GET['key']] = 'World';
+                    $_SESSION['default'] = true;
+                    $_SESSION['name']    = 'World';
                     
-                    $destination['default']    = $_SESSION['default'];
-                    $destination[$_GET['key']] = $_SESSION[$_GET['key']];
+                    $destination['default'] = $_SESSION['default'];
+                    $destination['name']    = $_SESSION['name'];
             }
         }
 
         print json_encode(array('status' => 'OK', 'source' => $snapshot, 'destination' => $destination));
+        break;
 
     case 'POST':
         if (isset($_POST['snapshot'])) {
@@ -52,6 +53,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         } else {
             print "ERROR - No snapshot provided";
         }
+        break;
 }
 
 session_write_close();
