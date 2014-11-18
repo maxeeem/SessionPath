@@ -69,10 +69,10 @@ $('#sPath').click(function() {
 <h1>Hello <?=$name?>!</h1>
 
 <input type="text" id="name">
-<input type="button" id="sPath">
+<button type="button" id="sPath">Go</button>
 <br>
 <a href="sPath('name', 'John Doe');">John Doe</a>
-&emps;
+&emsp;
 <a href="sPath('example');">Default example</a>
 
 </center>
