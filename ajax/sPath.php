@@ -5,9 +5,9 @@
 * GET  sets session variables
 * POST restores session to previos state
 */
-$allowed = array('default', 'name');
-
 session_start();
+
+$allowed = array('default', 'name');
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
