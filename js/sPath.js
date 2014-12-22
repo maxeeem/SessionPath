@@ -2,7 +2,7 @@
 * SessionPath js
 */
 
-function sPathSet(path) {
+function sPathAJAX(path) {
     sPathAJAX = path;
 }
 
