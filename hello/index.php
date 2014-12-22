@@ -12,17 +12,7 @@ $name    = isset($_SESSION['name'])    ? $_SESSION['name']    : 'Stranger';
 <title>"Hello World!" example</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="../js/sPath.js"></script>
-<script type="text/javascript">
-sPathSet('../ajax/sPath.php');
-
-$(document).ready(function() {
-    $('#sPath').click(function() {
-        if ($('#name').val() != '') {
-            sPath('name', $('#name').val());
-        }
-    });
-});
-</script>
+<script type="text/javascript">sPathSet('../ajax/sPath.php');</script>
 </head>
 <body>
 <center>
@@ -36,7 +26,9 @@ $(document).ready(function() {
 Enter Name: <input type="text" id="name">
 <button type="button" id="sPath">Go</button>
 <br>
-<a href='' onclick="sPath('name', 'John Doe');">John Doe</a>
+<a href='' onclick="sPath('name', 'John');">John</a>
+&emsp;
+<a href='' onclick="sPath('name', 'Jane');">Jane</a>
 &emsp;
 <a href='' onclick="sPath('example');">Default example</a>
 
