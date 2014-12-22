@@ -12,6 +12,7 @@ session_start();
 <script type="text/javascript">sPathAJAX('../ajax/sPath.php');</script>
 </head>
 <body>
+<a href="../">Home</a>
 <center>
 
 <?php 
@@ -29,11 +30,11 @@ else
 ?>
 
 <br>
-<a href='' onclick="sPath('name');">Default example</a>
+<a style="cursor:pointer" onclick="sPath('name');">DEFAULT</a>
 &emsp;
-<a href='' onclick="sPath('name', 'john');">John Doe</a>
+<a style="cursor:pointer" onclick="sPath('name', 'everyone');">Everyone</a>
 &emsp;
-<a href='' onclick="sPath('name', 'everyone');">Everyone</a>
+<a style="cursor:pointer" onclick="sPath('name', 'john');">John Doe</a>
 
 </center>
 </body>
