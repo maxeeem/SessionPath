@@ -4,41 +4,26 @@
 */
 session_start();
 
-$default = isset($_SESSION['default']) ? $_SESSION['default'] : null;
-$name    = isset($_SESSION['name'])    ? $_SESSION['name']    : 'Stranger';
+$name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Stranger';
 ?>
 <html>
 <head>
 <title>"Hello World!" example</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="../js/sPath.js"></script>
-<script type="text/javascript">
-sPathSet('../ajax/sPath.php');
-
-$(document).ready(function() {
-    $('#sPath').click(function() {
-        if ($('#name').val() != '') {
-            sPath('name', $('#name').val());
-        }
-    });
-});
-</script>
+<script type="text/javascript">sPathAJAX('../ajax/sPath.php');</script>
 </head>
 <body>
 <center>
 
-<?php if ($default) { ?>
-<h3>This is the default output</h3>
-<?php } ?>
-
 <h1>Hello <?=$name?>!</h1>
 
-Enter Name: <input type="text" id="name">
-<button type="button" id="sPath">Go</button>
 <br>
+<a href='' onclick="sPath('name');">Default example</a>
+&emsp;
 <a href='' onclick="sPath('name', 'John Doe');">John Doe</a>
 &emsp;
-<a href='' onclick="sPath('example');">Default example</a>
+<a href='' onclick="sPath('name', 'Everyone');">Everyone</a>
 
 </center>
 </body>
