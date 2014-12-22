@@ -7,7 +7,7 @@
 */
 session_start();
 
-$allowed = array('default', 'name');
+$allowed = array('name');
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
@@ -25,16 +25,14 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $destination[$_GET['key']] = $_GET['value'];
         } 
         /*
-        * complex routes that require setting of more than one parameter
+        * custom routes
         */
         elseif (isset($_GET['key']) && !isset($_GET['value'])) {
             switch ($_GET['key']) {
-                case 'example':
-                    $_SESSION['default'] = true;
-                    $_SESSION['name']    = 'World';
-                    
-                    $destination['default'] = $_SESSION['default'];
-                    $destination['name']    = $_SESSION['name'];
+                case 'name':
+                default:
+                    unset($_SESSION[$_GET['key']]);
+                    unset($destination[$_GET['key']]);
             }
         }
 
