@@ -3,8 +3,6 @@
 * "Hello World!" example using SessionPath
 */
 session_start();
-
-$name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Stranger';
 ?>
 <html>
 <head>
@@ -16,14 +14,26 @@ $name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Stranger';
 <body>
 <center>
 
-<h1>Hello <?=$name?>!</h1>
+<?php 
+if (!isset($_SESSION['name'])) 
+{ 
+?>
+  <h1>Hello World!</h1>
+
+<?php 
+} 
+else 
+{ 
+  include $_SESSION['name'].'.php'; 
+} 
+?>
 
 <br>
 <a href='' onclick="sPath('name');">Default example</a>
 &emsp;
-<a href='' onclick="sPath('name', 'John Doe');">John Doe</a>
+<a href='' onclick="sPath('name', 'john');">John Doe</a>
 &emsp;
-<a href='' onclick="sPath('name', 'Everyone');">Everyone</a>
+<a href='' onclick="sPath('name', 'everyone');">Everyone</a>
 
 </center>
 </body>
