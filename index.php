@@ -8,8 +8,9 @@ session_start();
 
 /*
 * (re)set defaults
+*
+* reset any defaults here if needed
 */
-$_SESSION['default'] = false;
 ?>
 <html>
 <head>
