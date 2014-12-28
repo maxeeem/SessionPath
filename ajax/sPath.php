@@ -31,8 +31,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
             switch ($_GET['key']) {
                 case 'name':
                 default:
-                    unset($_SESSION[$_GET['key']]);
-                    unset($destination[$_GET['key']]);
+                    $_SESSION[$_GET['key']]    = 'default';
+                    $destination[$_GET['key']] = 'default';
             }
         }
 
