@@ -30,7 +30,7 @@ else
 ?>
 
 <br>
-<a style="cursor:pointer" onclick="sPath('name');">DEFAULT</a>
+<a style="cursor:pointer" onclick="sPath('example');">DEFAULT</a>
 &emsp;
 <a style="cursor:pointer" onclick="sPath('name', 'everyone');">Everyone</a>
 &emsp;

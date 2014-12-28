@@ -7,7 +7,7 @@
 */
 session_start();
 
-$allowed = array('name');
+$allowed = array('name', 'example');
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
@@ -29,10 +29,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
         */
         elseif (isset($_GET['key']) && !isset($_GET['value'])) {
             switch ($_GET['key']) {
-                case 'name':
-                default:
-                    $_SESSION[$_GET['key']]    = 'default';
-                    $destination[$_GET['key']] = 'default';
+                case 'example':
+                    $_SESSION['name']    = 'default';
+                    $destination['name'] = 'default';
             }
         }
 
