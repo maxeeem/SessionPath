@@ -11,23 +11,26 @@ function sPath(key,value) {
     if (typeof value !== 'undefined') {
         url += '&value='+value;
     }
-    $.ajax({
-        type: 'GET',
-        url: url
-    }).done(function(response) {
-        try {
-            response = JSON.parse(response);
-        } catch (e) {
-            console.log(e);
-        }
-        if (response && response.status == 'OK') {
-            if (!history.state) {            
-                history.pushState(response.source, '');
+    
+    var ajax = new XMLHttpRequest();
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4 && ajax.status == 200) {
+            try {
+                response = JSON.parse(ajax.responseText);
+            } catch (e) {
+                console.log(e);
             }
-            history.pushState(response.destination, '');
-            window.location.reload();
+            if (response && response.status == 'OK') {
+                if (!history.state) {            
+                    history.pushState(response.source, '');
+                }
+                history.pushState(response.destination, '');
+                window.location.reload();
+            }
         }
-    });
+    };
+    ajax.open('GET', url);
+    ajax.send();
 }
 
 window.onpopstate = function(event) {
