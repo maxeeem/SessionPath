@@ -7,7 +7,6 @@ session_start();
 <html>
 <head>
 <title>"Hello World!" example</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="../js/sPath.js"></script>
 <script type="text/javascript">sPathAJAX('../ajax/sPath.php');</script>
 </head>
