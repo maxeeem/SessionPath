@@ -7,16 +7,25 @@
 */
 session_start();
 
+/*
+* array for filtering incoming data
+*/
 $allowed = array('name', 'example');
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
+        /*
+        * save current state
+        */
         $snapshot = array();
         foreach ($allowed as $key) {
             if (isset($_SESSION[$key])) $snapshot[$key] = $_SESSION[$key];
         }
         $destination = $snapshot;
         
+        /*
+        * set new state
+        */
         if (in_array($_GET['key'], $allowed)) {
             /*
             * simple route
@@ -42,6 +51,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
 
     case 'POST':
+        /*
+        * restore previous state
+        */
         if (isset($_POST['snapshot'])) {
             $snapshot = $_POST['snapshot'];
             foreach ($allowed as $key) {
