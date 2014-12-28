@@ -32,6 +32,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 case 'example':
                     $_SESSION['name']    = 'default';
                     $destination['name'] = 'default';
+                    break;
             }
         }
 
