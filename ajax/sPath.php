@@ -17,22 +17,24 @@ switch ($_SERVER['REQUEST_METHOD']) {
         }
         $destination = $snapshot;
         
-        /*
-        * simple route
-        */
-        if (isset($_GET['key']) && isset($_GET['value'])) {
-            $_SESSION[$_GET['key']]    = $_GET['value'];
-            $destination[$_GET['key']] = $_GET['value'];
-        } 
-        /*
-        * custom routes
-        */
-        elseif (isset($_GET['key']) && !isset($_GET['value'])) {
-            switch ($_GET['key']) {
-                case 'example':
-                    $_SESSION['name']    = 'default';
-                    $destination['name'] = 'default';
-                    break;
+        if (in_array($_GET['key'], $allowed)) {
+            /*
+            * simple route
+            */
+            if (isset($_GET['key']) && isset($_GET['value'])) {
+                $_SESSION[$_GET['key']]    = $_GET['value'];
+                $destination[$_GET['key']] = $_GET['value'];
+            } 
+            /*
+            * custom routes
+            */
+            elseif (isset($_GET['key']) && !isset($_GET['value'])) {
+                switch ($_GET['key']) {
+                    case 'example':
+                        $_SESSION['name']    = 'default';
+                        $destination['name'] = 'default';
+                        break;
+                }
             }
         }
 
