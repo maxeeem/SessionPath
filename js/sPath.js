@@ -35,17 +35,14 @@ function sPath(key,value) {
 
 window.onpopstate = function(event) {
     if (event.state) {
-        $.ajax({
-            type: 'POST',
-            url: sPathAJAX,
-            data: {
-                'snapshot' : event.state
-            }
-        }).done(function(response) {
-            if (response == 'READY') {
-                window.location.reload();
-            }
-        });
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4 && ajax.status == 200 && ajax.responseText == 'READY') {
+            window.location.reload();
+        }
+        ajax.open('POST', sPathAJAX);
+        ajax.setRequestHeader("Content-Type", "application/json");
+        ajax.send(JSON.stringify({ snapshot : event.state }));
     } else if (history.state == null && document.referrer == window.location.href) {
         history.back();
     }
