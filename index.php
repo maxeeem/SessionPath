@@ -11,9 +11,8 @@ session_start();
 *
 * reset any defaults here if needed
 */
-if (isset($_SESSION['name'])) {
-    unset($_SESSION['name']);
-}
+$_SESSION['name'] = 'default';
+
 ?>
 <html>
 <head>
