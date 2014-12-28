@@ -16,7 +16,7 @@ session_start();
 <center>
 
 <?php 
-if (!isset($_SESSION['name'])) 
+if ($_SESSION['name'] == 'default') 
 { 
 ?>
   <h1>Hello World!</h1>
