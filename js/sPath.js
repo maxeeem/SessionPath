@@ -42,13 +42,13 @@ window.onpopstate = function(event) {
         var snapshot = data.join('&');
 
         var ajax = new XMLHttpRequest();
+        ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         ajax.onreadystatechange = function() {
             if (ajax.readyState == 4 && ajax.status == 200 && ajax.responseText == 'READY') {
                 window.location.reload();
             }
         }
         ajax.open('POST', sPathAJAX);
-        ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         ajax.send(snapshot);
     } else if (history.state == null && document.referrer == window.location.href) {
         history.back();
