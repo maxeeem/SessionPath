@@ -48,7 +48,7 @@ onclick="sPath('name', 'john');"
 
 One more thing that I'd like to note are custom routes.
 
-Here, instead of passing a key-value pair to the ``sPath.js`` function, we passed a single argument:
+Here, instead of passing a key-value pair to the ``sPath.js`` function, we pass a single argument:
 ```
 onclick="sPath('example');"
 ```
