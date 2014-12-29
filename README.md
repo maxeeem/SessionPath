@@ -5,7 +5,7 @@ Session-based navigation. Quickly add dynamic functionality using a simple Javas
 
 **The library is located in the ``/src`` folder** and consists of two parts, a PHP server script and a Javascript file. It helps to think of navigation as transitioning from one state to another, and that is exactly what I tried to capture.
 
-A unique combination of paramenters can be used to identify any state. We store that information in the ``$_SESSION`` variable. When user interaction alters the default state, a Javascript function saves current snapshot in the browser history using ``History API``. It then calls the PHP script to update the current state in the ``$_SESSION`` variable and reloads the page.
+A unique combination of paramenters can be used to identify any state. We store that information in the ``$_SESSION`` variable. When user interaction alters the default state, a Javascript function saves the current snapshot into browser history using ``History API``. It then calls the PHP script to update the current state in the ``$_SESSION`` variable and reloads the page.
 
 The Javascript file also listens to the ``onpopstate`` event which gets triggered when a user clicks the Back button, for example. It uses History API to retrieve a past snapshot and passes it to the PHP script which restores the ``$_SESSION`` to its previous state.
 
