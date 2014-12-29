@@ -39,7 +39,7 @@ else
 } 
 ?>
 ```
-Which greeting to display is determined by the onclick event on the links below it which rely on SessionPath to do the heavy, or as in this example, not so heavy lifting:
+Which greeting to display is determined by the onclick event on the links below, which rely on SessionPath to do the heavy, or as in this example, not so heavy lifting:
 ```
 onclick="sPath('name', 'john');"
 ```
