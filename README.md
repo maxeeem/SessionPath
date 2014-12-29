@@ -3,7 +3,7 @@ SessionPath
 
 Session-based navigation. Quickly add dynamic functionality using a simple Javascript interface.
 
-The system consists of two parts, a PHP server script and a Javascript file (located in the ``/src`` folder). It helps to think of navigation as transitioning from one state to another, and that is exactly what I tried to capture.
+The system consists of two parts, a PHP server script and a Javascript file (**located in the ``/src`` folder**). It helps to think of navigation as transitioning from one state to another, and that is exactly what I tried to capture.
 
 A unique combination of paramenters can be used to identify any state. We store that information in the ``$_SESSION`` variable. When user interaction alters the default state, a Javascript function saves current snapshot in the browser history using ``History API``. It then calls the PHP script to update the current state in the ``$_SESSION`` variable and reloads the page.
 
