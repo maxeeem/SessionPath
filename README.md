@@ -1,5 +1,4 @@
 SessionPath
-===========
 
 Session-based navigation. Quickly add dynamic functionality using a simple Javascript interface.
 
