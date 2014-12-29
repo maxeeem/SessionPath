@@ -7,13 +7,13 @@ The system consists of two parts, a PHP server script and a Javascript file (loc
 
 A unique combination of paramenters can be used to identify any state. We store that information in the <code>$_SESSION</code> variable. When user interaction alters the default state, a Javascript function saves current snapshot in the browser history using History API. It then calls the PHP script to update the current state in the <code>$_SESSION</code> variable and reloads the page.
 
-The Javascript file also listens to the onpopstate event which gets triggered when a user clicks the Back button, for example. It uses <i>History API</i> to retrieve a past snapshot and passes it to the PHP script which restores the <code>$_SESSION</code> to its previous state.
+The Javascript file also listens to the onpopstate event which gets triggered when a user clicks the Back button, for example. It uses History API to retrieve a past snapshot and passes it to the PHP script which restores the <code>$_SESSION</code> to its previous state.
 
 All of this happens in the background and the user never sees any of the information being passed around (as in the case with a URL string). This, along with the ease of deployment (no <code>mod_rewrite</code>, etc.) and implementation, is why I wrote SessionPath and decided to share it, in the hope that other people might find it useful and use it to build something cool.
 
 ===========
 
-In this repository I provided a simple "Hello World"-ish example to illustrate the libarary's usage. The dynamic code is in the <code>/hello</code> folder, and the PHP and JS files are in the <code>/ajax</code> and <code>/js</code> folders respectively.
+In this repository I provided a simple "Hello World"-ish example to illustrate the libarary's usage. The dynamic code is in the <code>/hello</code> folder, and the PHP and JS files are in the ``/ajax`` and <code>/js</code> folders respectively.
 
 <code>index.php</code> in the <code>/</code> root folder should be fairly self-explanatory, with just one link to the /hello folder and a line of PHP code for setting our defaults, which in the case of our example is a "Hello World!" exclamation. It is important to note that other line in the very beginning - <code>session_start();</code> - without which nothing will work :)
 
