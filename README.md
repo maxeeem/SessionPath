@@ -9,6 +9,8 @@ A unique combination of paramenters can be used to identify any state. We store 
 
 The Javascript file also listens to the ``onpopstate`` event which gets triggered when a user clicks the Back button, for example. It uses History API to retrieve a past snapshot and passes it to the PHP script which restores the ``$_SESSION`` to its previous state.
 
+===========
+
 All of this happens in the background and the user never sees any of the information being passed around (as in the case with a URL string). This, along with the ease of deployment (no ``mod_rewrite``, etc.) and implementation, is why I wrote SessionPath and decided to share it, in the hope that other people might find it useful and use it to build something cool.
 
 ===========
