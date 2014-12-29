@@ -15,7 +15,7 @@ The Javascript file also listens to the ``onpopstate`` event which gets triggere
 
 In this repository I provided a simple "Hello World"<i>-like</i> example to illustrate the libarary's usage. The dynamic code is in the ``/hello`` folder, and the PHP and JS files are in the ``/ajax`` and ``/js`` folders respectively.
 
-``index.php`` in the ``/`` root folder should be fairly self-explanatory, with just one link to the /hello folder and a line of PHP code for setting our defaults, which in the case of our example is a "Hello World!" exclamation. It is important to note that other line in the very beginning - ``session_start();`` - without which nothing will work :)
+``index.php`` in the ``/`` root folder should be fairly self-explanatory, with just one link to the ``/hello`` folder and a line of PHP code for setting our defaults, which in the case of our example is a "Hello World!" exclamation. It is important to note that other line in the very beginning - ``session_start();`` - without which nothing will work :)
 
 ``index.php`` in the ``/hello`` folder is our main entry point for this "Hello World" example. Here we see the same ``session_start();`` line as before and then two new lines, importing the Javascript library and setting the path to the PHP script:
 ```
@@ -23,7 +23,23 @@ In this repository I provided a simple "Hello World"<i>-like</i> example to illu
 <script type="text/javascript">sPathAJAX('../ajax/sPath.php');</script>
 ```
 
-The next few lines are just simple logic to display either a "Hello World!" message or one of the custom greetings. Which greeting to display is determined by the onclick event on the links below the text which rely on SessionPath to do the heavy, or as in this example, not so heavy lifting:
+The next few lines are just simple logic to display either a "Hello World!" message or one of the custom greetings.
+```
+<?php 
+if ($_SESSION['name'] == 'default') 
+{ 
+?>
+  <h1>Hello World!</h1>
+
+<?php 
+} 
+else 
+{ 
+  include $_SESSION['name'].'.php'; 
+} 
+?>
+```
+Which greeting to display is determined by the onclick event on the links below it which rely on SessionPath to do the heavy, or as in this example, not so heavy lifting:
 ```
 onclick="sPath('name', 'john');"
 ```
