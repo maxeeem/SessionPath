@@ -13,7 +13,7 @@ The Javascript file also listens to the ``onpopstate`` event which gets triggere
 
 ===========
 
-In this repository I provided a simple "Hello World"-like example to illustrate the libarary's usage. The dynamic code is in the ``/hello`` folder, and the PHP and JS files are in the ``/ajax`` and ``/js`` folders respectively.
+In this repository I provided a simple "Hello World"<i>-like</i> example to illustrate the libarary's usage. The dynamic code is in the ``/hello`` folder, and the PHP and JS files are in the ``/ajax`` and ``/js`` folders respectively.
 
 ``index.php`` in the ``/`` root folder should be fairly self-explanatory, with just one link to the /hello folder and a line of PHP code for setting our defaults, which in the case of our example is a "Hello World!" exclamation. It is important to note that other line in the very beginning - ``session_start();`` - without which nothing will work :)
 
