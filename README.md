@@ -18,13 +18,19 @@ In this repository I provided a simple "Hello World"-ish example to illustrate t
 index.php in the root folder should be fairly self-explanatory, with just one link to the /hello folder and a line of PHP code for setting our defaults, which in the case of our example is a "Hello World!" exclamation. It is important to note that other line in the very beginning - session_start(); - without which nothing will work :)
 
 index.php in the /hello folder is our main entry point for this "Hello World" example. Here we see the same session_start(); line as before and then two new lines, importing the Javascript library and setting the path to the PHP script:
+```
 <script src="../js/sPath.js"></script>
 <script type="text/javascript">sPathAJAX('../ajax/sPath.php');</script>
+```
 
 The next few lines are just simple logic to display either a "Hello World!" message or one of the custom greetings. Which greeting to display is determined by the onclick event on the links below the text which rely on SessionPath to do the heavy, or as in this example, not so heavy lifting:
+```
 onclick="sPath('example');" and onclick="sPath('name', 'john');"
+```
 
 One more thing that I'd like to note are custom routes in the sPath.php file. 
+```
 switch ($_GET['key']) {
     case 'example':
+```
 Here, instead of passing a key-value pair to the sPath.js function, we pass a single argument. This single argument gets picked up by a case switch and can be used to set multiple related variables at once or for doing any other custom logic outside of the scope of simple key-value relationships.
